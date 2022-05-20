@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace PRN_SE1624_OOP
 {
@@ -18,6 +19,22 @@ namespace PRN_SE1624_OOP
             Employee e = new Employee(25.55f, "Hello", 25, "Namm", DateTime.Now);
             Console.WriteLine(e);
             Console.WriteLine(e.ToString());
+
+            ArrayList lstEmps = new ArrayList();
+            lstEmps.Add(e);
+            lstEmps.Add(new Employee(25.55f, "Manager", 2, "Khoi", DateTime.Now));
+            lstEmps.Add(new Employee(45.55f, "Manager", 3, "Khoi", DateTime.Now));
+            lstEmps.Add(new Employee(234.55f, "Manager", 4, "Khoi", DateTime.Now));
+            lstEmps.Add(new Employee(25.55f, "Manager", 5, "Khoi", DateTime.Now));
+            Display(lstEmps);
+        }
+
+        public static void Display(ArrayList lstData)
+        {
+            foreach (Employee e in lstData)
+            {
+                Console.WriteLine(e);
+            }
         }
     }
 }
